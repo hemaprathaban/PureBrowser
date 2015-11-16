@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <setting data-jetpack-id="jid1-MnnxcxisBPnSXQ@jetpack" pref="extensions.jid1-MnnxcxisBPnSXQ@jetpack.heuristicEnabled" pref-name="heuristicEnabled" title="Automatic blocking enabled" type="bool"/>
+  <setting data-jetpack-id="jid1-MnnxcxisBPnSXQ@jetpack" pref="extensions.jid1-MnnxcxisBPnSXQ@jetpack.socialWidgetReplacementEnabled" pref-name="socialWidgetReplacementEnabled" title="Social widget replacement enabled" type="bool"/>
+  <setting data-jetpack-id="jid1-MnnxcxisBPnSXQ@jetpack" pref="extensions.jid1-MnnxcxisBPnSXQ@jetpack.displayCounter" pref-name="displayCounter" title="Display Tracker Counter (experimental)" type="bool"/>
+  <setting data-jetpack-id="jid1-MnnxcxisBPnSXQ@jetpack" pref="extensions.jid1-MnnxcxisBPnSXQ@jetpack.blockedDomainRecheckDNT" pref-name="blockedDomainRecheckDNT" title="Recheck blocked domains for DNT policy document" type="bool"/>
+</vbox>

@@ -1,0 +1,412 @@
+{
+ "abort_on_missing": false, 
+ "check_memory": false, 
+ "enable_e10s": false, 
+ "is-sdk-bundled": false, 
+ "jetpackID": "jid1-MnnxcxisBPnSXQ@jetpack", 
+ "loader": "addon-sdk/lib/sdk/loader/cuddlefish.js", 
+ "main": "main", 
+ "mainPath": "privacybadger/main", 
+ "manifest": {
+  "privacybadger/WorkerQueue": {
+   "docsSHA256": null, 
+   "jsSHA256": "6f6ffe008817efc925011ab3c3206ef89d1420c19fd5ac3a10e5282dd832770e", 
+   "moduleName": "WorkerQueue", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "sdk/timers": "sdk/timers"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/abp/prefs": {
+   "docsSHA256": null, 
+   "jsSHA256": "683fbb785a0494c6b0b648fc52504cd13454d1d1b680b0c81fcc248f46738a87", 
+   "moduleName": "abp/prefs", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "chrome": "chrome", 
+    "info": "privacybadger/info"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/abp/utils": {
+   "docsSHA256": null, 
+   "jsSHA256": "1017a8c5811ccb1c28c5dd83293401ffbcf4fd029743a0c59b01c184fb4d37d2", 
+   "moduleName": "abp/utils", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "./prefs": "privacybadger/abp/prefs", 
+    "chrome": "chrome", 
+    "info": "privacybadger/info"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/contentPolicy": {
+   "docsSHA256": null, 
+   "jsSHA256": "268538199e1e5510d8508520f7a500addadb0a079141726fd1b6077d9fff434a", 
+   "moduleName": "contentPolicy", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "./cookieUtils": "privacybadger/cookieUtils", 
+    "./domainExceptions": "privacybadger/domainExceptions", 
+    "./main": "privacybadger/main", 
+    "./socialWidgetHandler": "privacybadger/socialWidgetHandler", 
+    "./ui": "privacybadger/ui", 
+    "./userStorage": "privacybadger/userStorage", 
+    "./utils": "privacybadger/utils", 
+    "chrome": "chrome", 
+    "sdk/core/heritage": "sdk/core/heritage", 
+    "sdk/event/core": "sdk/event/core", 
+    "sdk/platform/xpcom": "sdk/platform/xpcom", 
+    "sdk/simple-storage": "sdk/simple-storage", 
+    "sdk/tabs": "sdk/tabs"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/cookieUtils": {
+   "docsSHA256": null, 
+   "jsSHA256": "aefff4057512ae88e311e2fba4d1b73bf50ae7c6ab698e7d390c83a27d1ed849", 
+   "moduleName": "cookieUtils", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "./abp/utils": "privacybadger/abp/utils", 
+    "./utils": "privacybadger/utils", 
+    "chrome": "chrome", 
+    "sdk/preferences/service": "sdk/preferences/service", 
+    "sdk/simple-storage": "sdk/simple-storage"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/domainExceptions": {
+   "docsSHA256": null, 
+   "jsSHA256": "b2cd502ae0262bccd5d237480dc24f75304219ff248434ff28596ce7696d0030", 
+   "moduleName": "domainExceptions", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "./userStorage": "privacybadger/userStorage", 
+    "./utils": "privacybadger/utils", 
+    "sdk/page-mod": "sdk/page-mod", 
+    "sdk/request": "sdk/request", 
+    "sdk/self": "sdk/self", 
+    "sdk/simple-storage": "sdk/simple-storage", 
+    "sdk/tabs": "sdk/tabs"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/heuristicBlocker": {
+   "docsSHA256": null, 
+   "jsSHA256": "160818a65603d6720e74919f13ffd9459fd8c230ee1270c83670d34af7ebb7f8", 
+   "moduleName": "heuristicBlocker", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "./cookieUtils": "privacybadger/cookieUtils", 
+    "./policyCheck": "privacybadger/policyCheck", 
+    "./privateBrowsing": "privacybadger/privateBrowsing", 
+    "./ui": "privacybadger/ui", 
+    "./utils": "privacybadger/utils", 
+    "chrome": "chrome", 
+    "sdk/event/core": "sdk/event/core", 
+    "sdk/simple-prefs": "sdk/simple-prefs", 
+    "sdk/simple-storage": "sdk/simple-storage", 
+    "sdk/url/utils": "sdk/url/utils"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/info": {
+   "docsSHA256": null, 
+   "jsSHA256": "48acb0a88fb23ca96cf5752cc670d4237d588ecb3c59a315828c0a804bb68da5", 
+   "moduleName": "info", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "chrome": "chrome", 
+    "sdk/self": "sdk/self"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/main": {
+   "docsSHA256": "8e47cc4d2424667ab6f6db717d570025bccce00c5ddf893c5de0b24bc8cd9277", 
+   "jsSHA256": "44cbc5b225addba3a9ffa0f6c0c0f8aaae7f48d56e322e020792c9e415d888fd", 
+   "moduleName": "main", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "./contentPolicy": "privacybadger/contentPolicy", 
+    "./cookieUtils": "privacybadger/cookieUtils", 
+    "./heuristicBlocker": "privacybadger/heuristicBlocker", 
+    "./policyCheck": "privacybadger/policyCheck", 
+    "./prefsListener": "privacybadger/prefsListener", 
+    "./privateBrowsing": "privacybadger/privateBrowsing", 
+    "./progressListener": "privacybadger/progressListener", 
+    "./socialWidgetHandler": "privacybadger/socialWidgetHandler", 
+    "./ui": "privacybadger/ui", 
+    "./userStorage": "privacybadger/userStorage", 
+    "./utils": "privacybadger/utils", 
+    "chrome": "chrome", 
+    "sdk/event/core": "sdk/event/core", 
+    "sdk/page-mod": "sdk/page-mod", 
+    "sdk/preferences/service": "sdk/preferences/service", 
+    "sdk/self": "sdk/self", 
+    "sdk/simple-prefs": "sdk/simple-prefs", 
+    "sdk/simple-storage": "sdk/simple-storage", 
+    "sdk/system/events": "sdk/system/events", 
+    "sdk/tabs": "sdk/tabs", 
+    "sdk/windows": "sdk/windows"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/package.json": {
+   "docsSHA256": null, 
+   "jsSHA256": "e11297c6f033784d151e2d79c0f251f675d03c627d6f1878799014eb8903d27e", 
+   "moduleName": "package.json", 
+   "packageName": "privacybadger", 
+   "requirements": {}, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/policyCheck": {
+   "docsSHA256": null, 
+   "jsSHA256": "ee29b36835b15af5db54e00eb2c787ef6cea5f2118e6b517fb6e0bfc9e36c32c", 
+   "moduleName": "policyCheck", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "./WorkerQueue": "privacybadger/WorkerQueue", 
+    "./cookieUtils": "privacybadger/cookieUtils", 
+    "./sha1": "privacybadger/sha1", 
+    "./utils": "privacybadger/utils", 
+    "sdk/request": "sdk/request", 
+    "sdk/simple-prefs": "sdk/simple-prefs", 
+    "sdk/simple-storage": "sdk/simple-storage", 
+    "sdk/timers": "sdk/timers"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/prefsListener": {
+   "docsSHA256": null, 
+   "jsSHA256": "79379c9cb7f4773f72b981fff456495c7d2cf019432ee731cab4e89df8b8ddc3", 
+   "moduleName": "prefsListener", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "./heuristicBlocker": "privacybadger/heuristicBlocker", 
+    "./main": "privacybadger/main", 
+    "./ui": "privacybadger/ui", 
+    "./userStorage": "privacybadger/userStorage", 
+    "./utils": "privacybadger/utils", 
+    "sdk/event/core": "sdk/event/core", 
+    "sdk/preferences/event-target": "sdk/preferences/event-target", 
+    "sdk/preferences/service": "sdk/preferences/service", 
+    "sdk/self": "sdk/self", 
+    "sdk/simple-prefs": "sdk/simple-prefs", 
+    "sdk/system/events": "sdk/system/events"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/privateBrowsing": {
+   "docsSHA256": null, 
+   "jsSHA256": "af5ae095e1d004409176a4754110e29ad44ff998474fcd8116cd9fb587582a3e", 
+   "moduleName": "privateBrowsing", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "sdk/private-browsing": "sdk/private-browsing", 
+    "sdk/simple-storage": "sdk/simple-storage", 
+    "sdk/system/events": "sdk/system/events"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/progressListener": {
+   "docsSHA256": null, 
+   "jsSHA256": "926efe448bfe1edc56638e1c189ea69068d0043648e1c531a97083055280f5c9", 
+   "moduleName": "progressListener", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "./socialWidgetHandler": "privacybadger/socialWidgetHandler", 
+    "./ui": "privacybadger/ui", 
+    "./utils": "privacybadger/utils", 
+    "chrome": "chrome", 
+    "sdk/core/heritage": "sdk/core/heritage", 
+    "sdk/platform/xpcom": "sdk/platform/xpcom"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/sha1": {
+   "docsSHA256": null, 
+   "jsSHA256": "810f590fd1f26ce73b59c721130a9972c5ecad60a26e3dee696b554f06fc9f26", 
+   "moduleName": "sha1", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "chrome": "chrome"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/socialWidgetHandler": {
+   "docsSHA256": null, 
+   "jsSHA256": "bfa600284d4defef80210ca6ea7fd222f721b6d68739a7d4359d9f4f7a0c99b9", 
+   "moduleName": "socialWidgetHandler", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "./socialWidgetLoader": "privacybadger/socialWidgetLoader", 
+    "./ui": "privacybadger/ui", 
+    "./utils": "privacybadger/utils", 
+    "sdk/self": "sdk/self", 
+    "sdk/simple-storage": "sdk/simple-storage"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/socialWidgetLoader": {
+   "docsSHA256": null, 
+   "jsSHA256": "757f2a51e4ea56c75bf798abb38623ab46c546f4038974ef3a82f9e9f417f341", 
+   "moduleName": "socialWidgetLoader", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "sdk/self": "sdk/self"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/ui": {
+   "docsSHA256": null, 
+   "jsSHA256": "b7c5aa2408754035c294c5408447d9104b84d6a002497fef22e7aee0fccc20a1", 
+   "moduleName": "ui", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "./contentPolicy": "privacybadger/contentPolicy", 
+    "./main": "privacybadger/main", 
+    "./package.json": "privacybadger/package.json", 
+    "./userStorage": "privacybadger/userStorage", 
+    "./utils": "privacybadger/utils", 
+    "chrome": "chrome", 
+    "sdk/event/core": "sdk/event/core", 
+    "sdk/page-mod": "sdk/page-mod", 
+    "sdk/panel": "sdk/panel", 
+    "sdk/request": "sdk/request", 
+    "sdk/self": "sdk/self", 
+    "sdk/simple-prefs": "sdk/simple-prefs", 
+    "sdk/simple-storage": "sdk/simple-storage", 
+    "sdk/system/xul-app": "sdk/system/xul-app", 
+    "sdk/tabs": "sdk/tabs", 
+    "sdk/ui/button/toggle": "sdk/ui/button/toggle", 
+    "sdk/url": "sdk/url", 
+    "sdk/widget": "sdk/widget", 
+    "sdk/window/utils": "sdk/window/utils"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/userStorage": {
+   "docsSHA256": null, 
+   "jsSHA256": "390e98bd2544f6f4b27504f1c6b7b025e9225fbf0c7015744ab33a77a519653b", 
+   "moduleName": "userStorage", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "./abp/utils": "privacybadger/abp/utils", 
+    "./cookieUtils": "privacybadger/cookieUtils", 
+    "./domainExceptions": "privacybadger/domainExceptions", 
+    "./privateBrowsing": "privacybadger/privateBrowsing", 
+    "./utils": "privacybadger/utils", 
+    "sdk/request": "sdk/request", 
+    "sdk/self": "sdk/self", 
+    "sdk/simple-storage": "sdk/simple-storage", 
+    "sdk/timers": "sdk/timers"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "privacybadger/utils": {
+   "docsSHA256": null, 
+   "jsSHA256": "de058abd1fdefe995b02ab73df13218040635fe9a3a020a563d9d824a12511a7", 
+   "moduleName": "utils", 
+   "packageName": "privacybadger", 
+   "requirements": {
+    "./abp/utils": "privacybadger/abp/utils", 
+    "chrome": "chrome", 
+    "sdk/simple-prefs": "sdk/simple-prefs", 
+    "sdk/tabs": "sdk/tabs", 
+    "sdk/tabs/utils": "sdk/tabs/utils", 
+    "sdk/timers": "sdk/timers"
+   }, 
+   "sectionName": "lib"
+  }
+ }, 
+ "metadata": {
+  "addon-sdk": {
+   "description": "Add-on development made easy.", 
+   "keywords": [
+    "javascript", 
+    "engine", 
+    "addon", 
+    "extension", 
+    "xulrunner", 
+    "firefox", 
+    "browser"
+   ], 
+   "license": "MPL 2.0", 
+   "name": "addon-sdk"
+  }, 
+  "privacybadger": {
+   "author": "Electronic Frontier Foundation", 
+   "contributors": [
+    "Yan Zhu", 
+    "Garrett Robinson", 
+    "Monica Chew", 
+    "Cooper Quintin", 
+    "Noah Swartz", 
+    "Dan Auerbach", 
+    "Peter Eckersley", 
+    "Jonathan Mayer", 
+    "Hugh D'Andrade", 
+    "Franziska Roesner", 
+    "Jacob Hoffman-Andrews", 
+    "Jeremey Gillula", 
+    "ghostwords"
+   ], 
+   "description": "Protects privacy by blocking spying ads and invisible trackers.", 
+   "license": "GPL 3", 
+   "main": "main", 
+   "name": "privacybadger", 
+   "permissions": {
+    "private-browsing": true
+   }, 
+   "version": "1.0.2"
+  }
+ }, 
+ "name": "privacybadger", 
+ "parseable": false, 
+ "preferences": [
+  {
+   "name": "heuristicEnabled", 
+   "title": "Automatic blocking enabled", 
+   "type": "bool", 
+   "value": true
+  }, 
+  {
+   "hidden": true, 
+   "name": "doNotTrackDefaultEnabled", 
+   "title": "Default value of privacy.donottrackheader.enabled", 
+   "type": "bool", 
+   "value": false
+  }, 
+  {
+   "hidden": true, 
+   "name": "doNotTrackDefaultValue", 
+   "title": "Default value of privacy.donottrackheader.value", 
+   "type": "integer", 
+   "value": 1
+  }, 
+  {
+   "name": "socialWidgetReplacementEnabled", 
+   "title": "Social widget replacement enabled", 
+   "type": "bool", 
+   "value": true
+  }, 
+  {
+   "name": "displayCounter", 
+   "title": "Display Tracker Counter (experimental)", 
+   "type": "bool", 
+   "value": true
+  }, 
+  {
+   "name": "blockedDomainRecheckDNT", 
+   "title": "Recheck blocked domains for DNT policy document", 
+   "type": "bool", 
+   "value": true
+  }
+ ], 
+ "preferencesBranch": "jid1-MnnxcxisBPnSXQ@jetpack", 
+ "sdkVersion": "1.17-dirty", 
+ "staticArgs": {}, 
+ "verbose": false
+}

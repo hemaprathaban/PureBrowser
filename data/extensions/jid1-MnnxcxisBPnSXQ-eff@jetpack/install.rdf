@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?><!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. --><RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>jid1-MnnxcxisBPnSXQ-eff@jetpack</em:id>
+    <em:version>1.0.2</em:version>
+    <em:type>2</em:type>
+    <em:bootstrap>true</em:bootstrap>
+    <em:unpack>false</em:unpack>
+
+    <!-- Firefox -->
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>26.0</em:minVersion>
+        <em:maxVersion>30.0</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+
+    <!-- Front End MetaData -->
+    <em:name>Privacy Badger</em:name>
+    <em:description>Protects privacy by blocking spying ads and invisible trackers.</em:description>
+    <em:creator>Electronic Frontier Foundation</em:creator>
+    
+    <em:optionsType>2</em:optionsType>
+    
+  <em:contributor>Yan Zhu</em:contributor><em:contributor>Garrett Robinson</em:contributor><em:contributor>Monica Chew</em:contributor><em:contributor>Cooper Quintin</em:contributor><em:contributor>Noah Swartz</em:contributor><em:contributor>Dan Auerbach</em:contributor><em:contributor>Peter Eckersley</em:contributor><em:contributor>Jonathan Mayer</em:contributor><em:contributor>Hugh D'Andrade</em:contributor><em:contributor>Franziska Roesner</em:contributor><em:contributor>Jacob Hoffman-Andrews</em:contributor><em:contributor>Jeremey Gillula</em:contributor><em:contributor>ghostwords</em:contributor>
+    <!-- Custom data for signed XPI -->
+    <em:homepageURL>https://www.eff.org/privacybadger</em:homepageURL>
+    <em:updateURL>https://www.eff.org/files/privacy-badger-eff-update-2048.rdf</em:updateURL>
+    <em:updateKey>MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA6MR8W/galdxnpGqBsYbqOzQb2eyW15YFjDDEMI0ZOzt8f504obNs920lDnpPD2/KqgsfjOgw2K7xWDJIj/18xUvWPk3LDkrnokNiRkA3KOx3W6fHycKL+zID7zy+xZYBuh2fLyQtWV1VGQ45iNRp9+Zo7rH86cdfgkdnWTlNSHyTLW9NbXvyv/E12bppPcEvgCTAQXgnDVJ0/sqmeiijn9tTFh03aM+R2V/21h8aTraAS24qiPCz6gkmYGC8yr6mglcnNoYbsLNYZ69zF1XHcXPduCPdPdfLlzVlKK1/U7hkA28eG3BIAMh6uJYBRJTpiGgaGdPd7YekUB8S6cy+CQIDAQAB</em:updateKey>
+  </Description>
+</RDF>
