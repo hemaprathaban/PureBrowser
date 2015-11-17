@@ -181,9 +181,8 @@ sed 's/777/755/;' -i toolkit/crashreporter/google-breakpad/Makefile.in
 
 ./mach generate-addon-sdk-moz-build
 
-export DEBEMAIL DEBFULLNAME && dch -D stable "Converted into PureBrowser."
+export DEBEMAIL DEBFULLNAME && dch -p "Converted into PureBrowser."
 echo "Building PureBrowser..."
-vim debian/changelog
 apt-src import purebrowser --here
 cd $basedir
 apt-src build purebrowser
