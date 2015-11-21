@@ -121,6 +121,9 @@ pref("startup.homepage_welcome_url","https://search.disconnect.me");
 EOF
 export DEBEMAIL DEBFULLNAME && dch -m "Disconnect search page as home."
 
+# preferences hardening
+cat "$basedir"/data/vendor >>debian/vendor.js.in
+
 # search plugins
 rm -f browser/locales/en-US/searchplugins/*.xml
 cp "$basedir"/data/searchplugins/* browser/locales/en-US/searchplugins -a
@@ -159,15 +162,13 @@ sed 's/mozilla-esr/purism-esr/' -i browser/confvars.sh
 
 # change the name of the app
 sed -e 's/iceweasel/purebrowser/g' -i debian/control.in debian/changelog
-sed -e 's/www-browser,/www-browser, iceweasel, firefox,/' \
-    -e "s_^Maintainer.*_Maintainer: PureOS GNU/Linux developers <dev@puri.sm>_g" \
+sed -e "s_^Maintainer.*_Maintainer: PureOS GNU/Linux developers <dev@puri.sm>_g" \
     -i debian/control.in
 sed -e "s/^Conflicts:/Conflicts: iceweasel,/g" -i debian/control.in
-sed -e "s/Breaks:/Breaks: iceweasel,/g" -i debian/control.in
+sed -e "s/Provides:/Provides: iceweasel,/g" -i debian/control.in
 sed -e "/Breaks/ a\
-        Replaces: iceweasel," -i debian/control.in
-
-sed "s_^Maintainer.*_Maintainer: $DEBFULLNAME <$DEBEMAIL>_g" -i debian/control.in
+        Replaces: iceweasel" -i debian/control.in
+sed -e "s_^Maintainer.*_Maintainer: $DEBFULLNAME <$DEBEMAIL>_g" -i debian/control.in
 
 echo "Refreshing control file."
 debian/rules debian/control
@@ -181,7 +182,13 @@ sed 's/777/755/;' -i toolkit/crashreporter/google-breakpad/Makefile.in
 
 ./mach generate-addon-sdk-moz-build
 
-export DEBEMAIL DEBFULLNAME && dch -p "Converted into PureBrowser."
+# Fix bug when replacing iceweasel
+mv debian/browser.preinst.in debian/browser.postinst.in
+
+export DEBEMAIL DEBFULLNAME
+dch "Harden vendor.js preferences."
+dch -p -l "-1" "Converted into PureBrowser."
+
 echo "Building PureBrowser..."
 apt-src import purebrowser --here
 cd $basedir
