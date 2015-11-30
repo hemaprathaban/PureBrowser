@@ -116,21 +116,22 @@ sed -e "/startup.homepage_override/d" \
     -i debian/branding/firefox-branding.js
 
 cat << EOF >> debian/branding/firefox-branding.js
-pref("startup.homepage_override_url","https://search.disconnect.me");
-pref("startup.homepage_welcome_url","https://search.disconnect.me");
+pref("startup.homepage_override_url","https://duckduckgo.com");
+pref("startup.homepage_welcome_url","https://duckduckgo.com");
 EOF
-export DEBEMAIL DEBFULLNAME && dch -m "Disconnect search page as home."
+export DEBEMAIL DEBFULLNAME && dch -m "Duckduckgo search page as home."
 
 # preferences hardening
-cat "$basedir"/data/vendor >>debian/vendor.js.in
+##THIS FILE DOESNT EXIST
+#cat "$basedir"/data/vendor >>debian/vendor.js.in
 
 # search plugins
 rm -f browser/locales/en-US/searchplugins/*.xml
 cp "$basedir"/data/searchplugins/* browser/locales/en-US/searchplugins -a
 cat << EOF > browser/locales/en-US/searchplugins/list.txt
+duckduckgo
 disconnectme
 ixquick
-duckduckgo
 startpage
 creativecommons
 wikipedia
@@ -186,7 +187,8 @@ sed 's/777/755/;' -i toolkit/crashreporter/google-breakpad/Makefile.in
 mv debian/browser.preinst.in debian/browser.postinst.in
 
 export DEBEMAIL DEBFULLNAME
-dch "Harden vendor.js preferences."
+#vendor.js file doesnt exist
+#dch "Harden vendor.js preferences."
 dch -p -l "-1" "Converted into PureBrowser."
 
 echo "Building PureBrowser..."
