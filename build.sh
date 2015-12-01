@@ -119,7 +119,7 @@ cat << EOF >> debian/branding/firefox-branding.js
 pref("startup.homepage_override_url","https://duckduckgo.com");
 pref("startup.homepage_welcome_url","https://duckduckgo.com");
 EOF
-export DEBEMAIL DEBFULLNAME && dch -m "Duckduckgo search page as home."
+export DEBEMAIL DEBFULLNAME && dch -p -l "-1" "Duckduckgo search page as home."
 
 # preferences hardening
 cat << EOF >>debian/vendor.js.in
@@ -127,42 +127,49 @@ cat << EOF >>debian/vendor.js.in
 // http://www.mozilla.org/en-US/firefox/geolocation/
 pref("geo.enabled",             false);
 EOF
-dch -m "Disable location-aware browsing."
+dch -a "Disable location-aware browsing."
 
 cat << EOF >>debian/vendor.js.in
 pref("media.peerconnection.enabled",            false);
 EOF
-dch -m "Disable media peer connections for internal IP leak."
+dch -a "Disable media peer connections for internal IP leak."
 
 cat << EOF >>debian/vendor.js.in
 // https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
 pref("dom.battery.enabled",             false);
 EOF
-dch -m "Disable battery monitor for internal IP leak."
+dch -a "Disable battery monitor for internal IP leak."
 
 cat << EOF >>debian/vendor.js.in
 // https://wiki.mozilla.org/WebAPI/Security/WebTelephony
 pref("dom.telephony.enabled",           false);
 EOF
-dch -m "Disable web telephony for internal IP leak."
+dch -a "Disable web telephony for internal IP leak."
 
 cat << EOF >>debian/vendor.js.in
 // https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon
 pref("beacon.enabled",          false);
 EOF
-dch -m "Disable navigator beacon for internal IP leak."
+dch -a "Disable navigator beacon for internal IP leak."
 
 cat << EOF >>debian/vendor.js.in
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
 pref("dom.event.clipboardevents.enabled",               false);
 EOF
-dch -m "Disable clipboard events for internal IP leak."
+dch -a "Disable clipboard events for internal IP leak."
 
 cat << EOF >>debian/vendor.js.in
 // https://wiki.mozilla.org/HTML5_Speech_API
 pref("media.webspeech.recognition.enable",              false);
 EOF
-dch -m "Disable speech recognition."
+dch -a "Disable speech recognition."
+
+cat << EOF >>debian/vendor.js.in
+// Disable getUserMedia screen sharing
+// https://mozilla.github.io/webrtc-landing/gum_test.html
+pref("media.getusermedia.screensharing.enabled",                false);
+EOF
+dch -a "Disable getUserMedia screen sharing."
 
 # search plugins
 rm -f browser/locales/en-US/searchplugins/*.xml
@@ -226,9 +233,7 @@ sed 's/777/755/;' -i toolkit/crashreporter/google-breakpad/Makefile.in
 mv debian/browser.preinst.in debian/browser.postinst.in
 
 export DEBEMAIL DEBFULLNAME
-#vendor.js file doesnt exist
-#dch "Harden vendor.js preferences."
-dch -p -l "-1" "Converted into PureBrowser."
+dch -a "Converted into PureBrowser."
 
 echo "Building PureBrowser..."
 apt-src import purebrowser --here
