@@ -122,8 +122,11 @@ EOF
 export DEBEMAIL DEBFULLNAME && dch -m "Duckduckgo search page as home."
 
 # preferences hardening
-##THIS FILE DOESNT EXIST
-#cat "$basedir"/data/vendor >>debian/vendor.js.in
+cat << EOF >>debian/vendor.js.in
+// disable Location-Aware Browsing
+// http://www.mozilla.org/en-US/firefox/geolocation/
+pref("geo.enabled",             false);
+EOF
 
 # search plugins
 rm -f browser/locales/en-US/searchplugins/*.xml
