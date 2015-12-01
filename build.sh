@@ -126,9 +126,25 @@ cat << EOF >>debian/vendor.js.in
 // disable Location-Aware Browsing
 // http://www.mozilla.org/en-US/firefox/geolocation/
 pref("geo.enabled",             false);
+EOF
+dch -m "Disable location-aware browsing."
 
+cat << EOF >>debian/vendor.js.in
 pref("media.peerconnection.enabled",            false);
 EOF
+dch -m "Disable media peer connections for internal IP leak."
+
+cat << EOF >>debian/vendor.js.in
+// https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
+pref("dom.battery.enabled",             false);
+EOF
+dch -m "Disable battery monitor for internal IP leak."
+
+cat << EOF >>debian/vendor.js.in
+// https://wiki.mozilla.org/WebAPI/Security/WebTelephony
+pref("dom.telephony.enabled",           false);
+EOF
+dch -m "Disable web telephony for internal IP leak."
 
 # search plugins
 rm -f browser/locales/en-US/searchplugins/*.xml
