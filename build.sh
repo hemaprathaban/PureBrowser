@@ -126,6 +126,8 @@ cat << EOF >>debian/vendor.js.in
 // disable Location-Aware Browsing
 // http://www.mozilla.org/en-US/firefox/geolocation/
 pref("geo.enabled",             false);
+
+pref("media.peerconnection.enabled",            false);
 EOF
 
 # search plugins
