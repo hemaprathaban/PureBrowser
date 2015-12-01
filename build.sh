@@ -152,6 +152,12 @@ pref("beacon.enabled",          false);
 EOF
 dch -m "Disable navigator beacon for internal IP leak."
 
+cat << EOF >>debian/vendor.js.in
+// https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
+pref("dom.event.clipboardevents.enabled",               false);
+EOF
+dch -m "Disable clipboard events for internal IP leak."
+
 # search plugins
 rm -f browser/locales/en-US/searchplugins/*.xml
 cp "$basedir"/data/searchplugins/* browser/locales/en-US/searchplugins -a
