@@ -158,6 +158,12 @@ pref("dom.event.clipboardevents.enabled",               false);
 EOF
 dch -m "Disable clipboard events for internal IP leak."
 
+cat << EOF >>debian/vendor.js.in
+// https://wiki.mozilla.org/HTML5_Speech_API
+pref("media.webspeech.recognition.enable",              false);
+EOF
+dch -m "Disable speech recognition."
+
 # search plugins
 rm -f browser/locales/en-US/searchplugins/*.xml
 cp "$basedir"/data/searchplugins/* browser/locales/en-US/searchplugins -a
