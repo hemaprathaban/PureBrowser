@@ -146,6 +146,12 @@ pref("dom.telephony.enabled",           false);
 EOF
 dch -m "Disable web telephony for internal IP leak."
 
+cat << EOF >>debian/vendor.js.in
+// https://developer.mozilla.org/en-US/docs/Web/API/navigator.sendBeacon
+pref("beacon.enabled",          false);
+EOF
+dch -m "Disable navigator beacon for internal IP leak."
+
 # search plugins
 rm -f browser/locales/en-US/searchplugins/*.xml
 cp "$basedir"/data/searchplugins/* browser/locales/en-US/searchplugins -a
